@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Advice generator app
+    link(rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png")
+    link(rel="stylesheet", href="./style.css")
+  body 
+    .component 
+      header.component__header 
+        .header 
+          p.header__title
+      main.component__main 
+        .main 
+          p.main__text
+          img.main__divider(src="./images/pattern-divider-mobile.svg", alt="divider")
+      footer.component__footer 
+        .footer
+          button.footer__dice
+            img(src="./images/icon-dice.svg", alt="dice")
+        
+    script(src="./app.js")

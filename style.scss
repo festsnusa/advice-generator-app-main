@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+$cyanLight: hsl(193, 38%, 86%);
+$neonGreen: hsl(150, 100%, 66%);
+$blueDarkGray: hsl(217, 19%, 24%);
+$blueDark: hsl(218, 23%, 16%);
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.75rem;
+  font-family: 'Manrope', sans-serif;
+  background-color: $blueDark;
+  min-height: 100vh;
+  display: grid;
+}
+
+.component {
+  @include flexColumn;
+  margin: auto;
+  max-width: 30rem;
+  border-radius: 0.625rem;
+
+  text-align: center;
+  background-color: $blueDarkGray;
+
+  &__header {padding: 3rem}
+}
+
+.header__title {
+    color: $neonGreen;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.main {
+
+  @include flexColumn;
+  padding: 2rem;
+
+  &__text {color: $cyanLight}
+  &__divider {border-radius: 50%}
+
+}
+
+.footer {
+
+  &__dice {
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: $neonGreen;
+    padding: 1rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+      transition: transform 0.5s;
+      box-shadow: 0 0 8px $neonGreen;
+    }
+
+  }
+}
+
+@media (min-width: 1440px) {
+  .main__divider{content: url('./images/pattern-divider-desktop.svg')}
+}
